@@ -1,0 +1,32 @@
+dn: dc=acme,dc=com
+objectclass: top
+objectclass: dcObject
+objectclass: organization
+dc: acme
+o: MCC
+
+dn: ou=People,dc=acme,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: People
+
+dn: uid=admin,ou=People,dc=acme,dc=com
+objectclass: top
+objectclass: uidObject
+objectclass: person
+uid: admin
+cn: Manager
+sn: Manager
+userPassword: secret
+
+dn: ou=Roles,dc=acme,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: Roles
+
+dn: cn=Manager,ou=Roles,dc=acme,dc=com
+objectClass: top
+objectClass: groupOfNames
+cn: Manager
+description: the acme admin group
+member: uid=admin,ou=People,dc=acme,dc=com
